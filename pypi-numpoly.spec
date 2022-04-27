@@ -4,18 +4,16 @@
 #
 Name     : pypi-numpoly
 Version  : 1.2.3
-Release  : 3
+Release  : 4
 URL      : https://files.pythonhosted.org/packages/37/10/96ccf9b0ba76b552939cd9f2be478b8b03b1160f33cde0f840e9cadf0f9e/numpoly-1.2.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/37/10/96ccf9b0ba76b552939cd9f2be478b8b03b1160f33cde0f840e9cadf0f9e/numpoly-1.2.3.tar.gz
 Summary  : Polynomials as a numpy datatype
 Group    : Development/Tools
 License  : BSD-2-Clause
+Requires: pypi-numpoly-license = %{version}-%{release}
 Requires: pypi-numpoly-python = %{version}-%{release}
 Requires: pypi-numpoly-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: numpoly
-Provides: numpoly-python
-Provides: numpoly-python3
 BuildRequires : pypi(poetry)
 
 %description
@@ -23,6 +21,14 @@ BuildRequires : pypi(poetry)
 :height: 200 px
 :width: 200 px
 :align: center
+
+%package license
+Summary: license components for the pypi-numpoly package.
+Group: Default
+
+%description license
+license components for the pypi-numpoly package.
+
 
 %package python
 Summary: python components for the pypi-numpoly package.
@@ -53,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641459977
+export SOURCE_DATE_EPOCH=1651102825
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -68,6 +74,8 @@ python3 -m build --wheel --skip-dependency-check --no-isolation
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-numpoly
+cp %{_builddir}/numpoly-1.2.3/LICENSE %{buildroot}/usr/share/package-licenses/pypi-numpoly/e4a3a7723c8c4b8983a586e0af62f15a5e98483a
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -75,6 +83,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-numpoly/e4a3a7723c8c4b8983a586e0af62f15a5e98483a
 
 %files python
 %defattr(-,root,root,-)
