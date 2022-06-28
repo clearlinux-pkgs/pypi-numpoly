@@ -4,7 +4,7 @@
 #
 Name     : pypi-numpoly
 Version  : 1.2.3
-Release  : 6
+Release  : 7
 URL      : https://files.pythonhosted.org/packages/37/10/96ccf9b0ba76b552939cd9f2be478b8b03b1160f33cde0f840e9cadf0f9e/numpoly-1.2.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/37/10/96ccf9b0ba76b552939cd9f2be478b8b03b1160f33cde0f840e9cadf0f9e/numpoly-1.2.3.tar.gz
 Summary  : Polynomials as a numpy datatype
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656390921
+export SOURCE_DATE_EPOCH=1656391750
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
