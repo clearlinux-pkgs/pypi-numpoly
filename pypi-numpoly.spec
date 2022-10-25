@@ -4,7 +4,7 @@
 #
 Name     : pypi-numpoly
 Version  : 1.2.3
-Release  : 13
+Release  : 14
 URL      : https://files.pythonhosted.org/packages/37/10/96ccf9b0ba76b552939cd9f2be478b8b03b1160f33cde0f840e9cadf0f9e/numpoly-1.2.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/37/10/96ccf9b0ba76b552939cd9f2be478b8b03b1160f33cde0f840e9cadf0f9e/numpoly-1.2.3.tar.gz
 Summary  : Polynomials as a numpy datatype
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656391750
+export SOURCE_DATE_EPOCH=1666723911
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -74,8 +74,8 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx "
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
@@ -87,7 +87,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-numpoly
-cp %{_builddir}/numpoly-1.2.3/LICENSE %{buildroot}/usr/share/package-licenses/pypi-numpoly/e4a3a7723c8c4b8983a586e0af62f15a5e98483a
+cp %{_builddir}/numpoly-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-numpoly/e4a3a7723c8c4b8983a586e0af62f15a5e98483a || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
