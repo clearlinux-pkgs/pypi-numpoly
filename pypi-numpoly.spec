@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-numpoly
-Version  : 1.2.10
-Release  : 21
-URL      : https://files.pythonhosted.org/packages/1f/38/660d34a8d15b09f318d0accfc8e0af9153bfaab16036875933203da812f8/numpoly-1.2.10.tar.gz
-Source0  : https://files.pythonhosted.org/packages/1f/38/660d34a8d15b09f318d0accfc8e0af9153bfaab16036875933203da812f8/numpoly-1.2.10.tar.gz
+Version  : 1.2.11
+Release  : 22
+URL      : https://files.pythonhosted.org/packages/0a/39/85a0d30f63c29b83caa510ad343c13aa0e4e58c5debe44e07afac0587928/numpoly-1.2.11.tar.gz
+Source0  : https://files.pythonhosted.org/packages/0a/39/85a0d30f63c29b83caa510ad343c13aa0e4e58c5debe44e07afac0587928/numpoly-1.2.11.tar.gz
 Summary  : Polynomials as a numpy datatype
 Group    : Development/Tools
 License  : BSD-2-Clause
@@ -58,10 +58,10 @@ python3 components for the pypi-numpoly package.
 
 
 %prep
-%setup -q -n numpoly-1.2.10
-cd %{_builddir}/numpoly-1.2.10
+%setup -q -n numpoly-1.2.11
+cd %{_builddir}/numpoly-1.2.11
 pushd ..
-cp -a numpoly-1.2.10 buildavx2
+cp -a numpoly-1.2.11 buildavx2
 popd
 
 %build
@@ -69,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688572584
+export SOURCE_DATE_EPOCH=1689003981
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
