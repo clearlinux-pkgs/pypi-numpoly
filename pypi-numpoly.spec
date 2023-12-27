@@ -5,7 +5,7 @@
 #
 Name     : pypi-numpoly
 Version  : 1.2.11
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/0a/39/85a0d30f63c29b83caa510ad343c13aa0e4e58c5debe44e07afac0587928/numpoly-1.2.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/0a/39/85a0d30f63c29b83caa510ad343c13aa0e4e58c5debe44e07afac0587928/numpoly-1.2.11.tar.gz
 Summary  : Polynomials as a numpy datatype
