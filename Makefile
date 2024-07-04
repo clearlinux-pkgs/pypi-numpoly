@@ -1,5 +1,5 @@
 PKG_NAME := pypi-numpoly
-URL = https://files.pythonhosted.org/packages/97/eb/644da94dc4c7850a7f5f7697dea4a759087d4aab4e3dc85c4ba9db097737/numpoly-1.2.12.tar.gz
+URL = https://files.pythonhosted.org/packages/21/af/38f14d6cc41e6c41538d07ad3ccf0caa4a800aa721e2a3e5eec34749fc42/numpoly-1.2.13.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
